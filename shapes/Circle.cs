@@ -9,17 +9,18 @@ namespace shapes
     public class Circle : Shape
     {
         public float R { get; }
-        private float _area = 0;
+        private float _area = -1;
 
         public Circle(float r)
         {
-            this.R = r;
+            if (r <= 0) throw new ArgumentException();
+            R = r;
         }
         public override float CalculateArea()
         {
-            if (this._area < 0)
-                this._area = 3.14f * R * R;
-            return this._area;
+            if (_area < 0)
+                _area = MathF.PI * R * R;
+            return _area;
         }
     }
 }
