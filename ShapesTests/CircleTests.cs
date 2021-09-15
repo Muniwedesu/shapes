@@ -17,7 +17,7 @@ namespace ShapesTests
         [InlineData(28f, 2463.00864f)]
         [InlineData(1f, 3.14159)]
         [InlineData(0.08f, 0.020106f)]
-        public void ShouldCalculateRadius(float r, float expected)
+        public void AreaCalculatesCorrectly(float r, float expected)
         {
             var c = new Circle(r);
             var actual = c.CalculateArea();
